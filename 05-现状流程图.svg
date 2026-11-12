@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1850" viewBox="0 0 1600 1850">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#365b7a"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#23384d" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .title { font:700 38px Arial,'Microsoft YaHei',sans-serif; fill:#183247; }
+      .subtitle { font:400 20px Arial,'Microsoft YaHei',sans-serif; fill:#5b7183; }
+      .step { fill:#eaf3f8; stroke:#4e7898; stroke-width:3; rx:16; filter:url(#shadow); }
+      .human { fill:#eaf6ec; stroke:#4f8a5b; stroke-width:3; rx:16; filter:url(#shadow); }
+      .alert { fill:#fff1dc; stroke:#c4872f; stroke-width:3; rx:16; filter:url(#shadow); }
+      .note { fill:#f1f4f7; stroke:#8796a5; stroke-width:2; rx:16; }
+      .decision { fill:#fff8df; stroke:#c4872f; stroke-width:3; filter:url(#shadow); }
+      .terminator { fill:#edf0f5; stroke:#65758a; stroke-width:3; rx:28; filter:url(#shadow); }
+      .label { font:700 22px Arial,'Microsoft YaHei',sans-serif; fill:#193347; text-anchor:middle; dominant-baseline:middle; }
+      .detail { font:400 17px Arial,'Microsoft YaHei',sans-serif; fill:#486173; text-anchor:middle; dominant-baseline:middle; }
+      .small { font:400 16px Arial,'Microsoft YaHei',sans-serif; fill:#486173; }
+      .branchText { font:700 17px Arial,'Microsoft YaHei',sans-serif; fill:#a25b19; }
+      .flow { stroke:#365b7a; stroke-width:4; fill:none; marker-end:url(#arrow); }
+      .exception { stroke:#b66a1f; stroke-width:4; fill:none; marker-end:url(#arrow); }
+      .guide { stroke:#a0acb6; stroke-width:2; stroke-dasharray:8 8; fill:none; }
+    </style>
+  </defs>
+  <rect width="1600" height="1850" fill="#f8fbfd"/>
+  <text x="800" y="62" class="title" text-anchor="middle">中央厨房备料与损耗｜现状流程图</text>
+  <text x="800" y="100" class="subtitle" text-anchor="middle">现场调研草图 · 只把已访谈确认的六节点画作主干</text>
+
+  <rect x="490" y="145" width="520" height="88" class="terminator"/>
+  <text x="750" y="178" class="label">开始：门店订货</text>
+  <text x="750" y="208" class="detail">按成品份数提出需求</text>
+  <line x1="750" y1="233" x2="750" y2="286" class="flow"/>
+
+  <rect x="490" y="286" width="520" height="100" class="step"/>
+  <text x="750" y="322" class="label">需求合并</text>
+  <text x="750" y="355" class="detail">采购计划员整理、校核并跟进交接</text>
+  <line x1="750" y1="386" x2="750" y2="444" class="flow"/>
+
+  <polygon points="750,444 930,535 750,626 570,535" class="decision"/>
+  <text x="750" y="516" class="label">订货/规则信息</text>
+  <text x="750" y="548" class="label">够不够核对？</text>
+  <line x1="570" y1="535" x2="305" y2="535" class="exception"/>
+  <text x="420" y="510" class="branchText">否：缺字段/版本冲突</text>
+  <rect x="65" y="485" width="240" height="100" class="alert"/>
+  <text x="185" y="520" class="label">退回补资料</text>
+  <text x="185" y="551" class="detail">保留原因与接手人</text>
+  <line x1="185" y1="585" x2="185" y2="650" class="exception"/>
+  <rect x="65" y="650" width="240" height="100" class="human"/>
+  <text x="185" y="685" class="label">规则冲突</text>
+  <text x="185" y="716" class="detail">两版本交食安判断</text>
+  <text x="330" y="762" class="small">退回/冲突处理规则来自访谈；具体审批阈值待确认。</text>
+
+  <line x1="750" y1="626" x2="750" y2="687" class="flow"/>
+  <rect x="490" y="687" width="520" height="100" class="step"/>
+  <text x="750" y="723" class="label">备料</text>
+  <text x="750" y="756" class="detail">转化率依赖经验；记录换算与投料依据</text>
+  <line x1="750" y1="787" x2="750" y2="845" class="flow"/>
+
+  <polygon points="750,845 930,936 750,1027 570,936" class="decision"/>
+  <text x="750" y="917" class="label">备料量是否出现</text>
+  <text x="750" y="949" class="label">多备/少备异常？</text>
+  <line x1="570" y1="936" x2="305" y2="936" class="exception"/>
+  <text x="430" y="910" class="branchText">是：调整/补料</text>
+  <rect x="65" y="886" width="240" height="100" class="alert"/>
+  <text x="185" y="921" class="label">改量或补料</text>
+  <text x="185" y="952" class="detail">原因、数量、责任人留痕</text>
+  <text x="330" y="1010" class="small">备多可能增加损耗；备少可能临时补料或缺配。</text>
+  <line x1="750" y1="1027" x2="750" y2="1085" class="flow"/>
+
+  <rect x="490" y="1085" width="520" height="100" class="step"/>
+  <text x="750" y="1121" class="label">加工</text>
+  <text x="750" y="1154" class="detail">采集实际投料、可用产出和损耗记录</text>
+  <line x1="750" y1="1185" x2="750" y2="1243" class="flow"/>
+
+  <rect x="490" y="1243" width="520" height="100" class="human"/>
+  <text x="750" y="1279" class="label">检验</text>
+  <text x="750" y="1312" class="detail">检验、效期和异常批次由质量人员判断</text>
+  <line x1="750" y1="1343" x2="750" y2="1401" class="flow"/>
+
+  <polygon points="750,1401 930,1492 750,1583 570,1492" class="decision"/>
+  <text x="750" y="1473" class="label">是否存在食安/</text>
+  <text x="750" y="1505" class="label">效期异常？</text>
+  <line x1="570" y1="1492" x2="305" y2="1492" class="exception"/>
+  <text x="430" y="1466" class="branchText">是：停止配送</text>
+  <rect x="65" y="1442" width="240" height="100" class="human"/>
+  <text x="185" y="1477" class="label">质量人员隔离</text>
+  <text x="185" y="1508" class="detail">人工确认并留审计记录</text>
+  <line x1="750" y1="1583" x2="750" y2="1641" class="flow"/>
+
+  <rect x="490" y="1641" width="520" height="100" class="step"/>
+  <text x="750" y="1677" class="label">配送</text>
+  <text x="750" y="1710" class="detail">记录配送、可售份数、缺配与交接等待</text>
+  <line x1="750" y1="1741" x2="750" y2="1792" class="flow"/>
+  <rect x="490" y="1792" width="520" height="48" class="terminator"/>
+  <text x="750" y="1816" class="label">结束：完成交接并保留记录</text>
+
+  <rect x="1080" y="350" width="445" height="420" class="note"/>
+  <text x="1110" y="390" class="label" text-anchor="start">待关联的证据资料</text>
+  <text x="1110" y="435" class="small">• 订货单与修改日志</text>
+  <text x="1110" y="475" class="small">• 采购入库单</text>
+  <text x="1110" y="515" class="small">• 领料/投料记录</text>
+  <text x="1110" y="555" class="small">• 加工、称重和损耗记录</text>
+  <text x="1110" y="595" class="small">• 检验、效期与批次记录</text>
+  <text x="1110" y="635" class="small">• 配送单与门店签收记录</text>
+  <text x="1110" y="695" class="small">采购入库等资料的主流程位置尚未确认，</text>
+  <text x="1110" y="725" class="small">先作为核验材料，不视为已确认流程节点。</text>
+  <path d="M1080 560 L1038 560 L1038 540 L950 540" class="guide"/>
+
+  <rect x="1080" y="900" width="445" height="310" class="note"/>
+  <text x="1110" y="940" class="label" text-anchor="start">口径与工作量提醒</text>
+  <text x="1110" y="985" class="small">• 门店可售份数</text>
+  <text x="1110" y="1025" class="small">• 厨房加工量</text>
+  <text x="1110" y="1065" class="small">• 采购公斤数</text>
+  <text x="1110" y="1120" class="small">三种口径分别记录，不混算。</text>
+  <text x="1110" y="1160" class="small">9000份/日、约3小时为口述工作量，</text>
+  <text x="1110" y="1190" class="small">不等于订单笔数或节点耗时。</text>
+  <path d="M1080 1035 L1045 1035 L1045 936 L932 936" class="guide"/>
+
+  <text x="800" y="1846" class="subtitle" text-anchor="middle">依据：训练页面访谈事实；真实现场顺序、样本、具体时长和金额仍待单据/观察验证。</text>
+</svg>
